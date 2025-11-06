@@ -89,13 +89,6 @@ http://127.0.0.1:5000/static/live_sim.html
 - 页面：`static/live_sim.html` （在浏览器打开 `http://127.0.0.1:5000/static/live_sim.html`）
 - 脚本：`scripts/simulate_barrage.py`（向运行中的服务发送弹幕）
 
-## 已删除 / 已弃用的文件说明
-
-- 原来仓库中有若干 Aliyun(DashScope) TTS 实现与测试脚本，这些文件已被降级为兼容 shim 或备份以减少混淆。
-- 具体位置：`services/tts_provider.py`（shim），`utils/tts.py`（shim），`scripts/backup_tts/`（历史备份）。
-
-如果你确实想彻底删除历史备份文件，我可以在收到确认后帮你清理（这是不可逆的操作）。
-
 ## 恢复或启用 WebSocket 实时推送
 
 项目包含一个可选的广播模块 `services/bullet_ws.py`，默认不在 `app.py` 启动时自动运行（以避免在部分 Windows 环境下的 asyncio 线程问题）。若你希望启用：
