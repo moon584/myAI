@@ -12,8 +12,7 @@
   - FAQ 白名单优先返回与命中统计
   - 自动 FAQ 推荐（基于高频未覆盖的问答）
 - 语音合成（TTS）
-  - 语音模块已移除；计划替换为百度语音（Baidu TTS）。
-    - 当前仓库已移除阿里云/DashScope TTS 的运行时实现以腾出位置。
+  - 百度语音（Baidu TTS）。
     - 若要接入百度，请把新的 TTS 实现放在 `services/` 下并在 `.env` 中配置相应密钥与参数。
 - 前端体验
   - 固定头尾、可折叠侧栏，浮动按钮与键盘快捷键（Alt+L、Alt+1..5）
@@ -29,14 +28,6 @@
 ├─ routes/               # Flask Blueprints（聊天/FAQ/会话/统计）
 ├─ services/             # AI 服务封装与系统提示词（persona：小聚）
 # 小聚AI助手（精简版）
-
-这是为直播电商 / 助农场景准备的一个轻量化后端示例，包含会话管理、AI 问答、弹幕收集与本地演示页面。
-
-当前主要改动与状态：
-- 使用 DeepSeek 风格的聊天 API（通过 `services` 中的 AI 封装）；
-- 已集成 Baidu 短文本在线合成（`services/baidu_tts.py`），并将 `/api/chat` 的回复合成为短音频，返回 `audio_url`；
-- 原有的 Aliyun/DashScope TTS 已降级为历史实现（保留兼容 shim），推荐使用 `services/baidu_tts.py`；
-- 增加了一个本地直播弹幕模拟页用于演示（`static/live_sim.html`）。
 
 ## 快速开始（Windows / PowerShell）
 
